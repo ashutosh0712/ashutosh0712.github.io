@@ -77,21 +77,6 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
 	top: 0;
 	left: 0;
 	bottom: 0;
-	background-image: url(../img/sidebg-1.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-}
-
-#sidebar:before{
-	content:'';
-	position:absolute;
-	top:0;
-	left:0;
-	bottom:0;
-	right:0;
-	background-color: #000;
-	opacity: 0.8;
 }
 
 #sidebar-wrapper{
@@ -228,9 +213,11 @@ ul#navigation > li {
 	border-top: 1px solid #373737;
 	border-bottom: 1px solid #2B2B2B;
 	cursor: pointer;
-	background-color: rgba(48, 48, 48, 0.6) !important;
-	border-top: 1px solid rgba(55, 55, 55, 0.4) !important;
- 	border-bottom: 1px solid rgba(43, 43, 43, 0.4) !important;
+	-webkit-transition: background 0.5s;
+	-moz-transition: background 0.5s;
+	-o-transition: background 0.5s;
+	-ms-transition: background 0.5s;
+	transition: background 0.5s;
 }
 
 ul#navigation > li > a {
@@ -239,7 +226,7 @@ ul#navigation > li > a {
 }
 
 ul#navigation li:hover,ul#navigation li:focus {
-	background-color: rgba(54, 54, 54, 0.1) !important;
+	background: #363636;
 }
 
 ul#navigation li:hover a,ul#navigation li:focus a {
@@ -338,6 +325,22 @@ ul#navigation li .fa {
 	padding: 60px 0 45px 0;
 }
 
+.pageheader:after {
+	top: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(8, 4, 13, 0);
+	border-top-color: #f3f3f3;
+	border-width: 30px;
+	left: 50%;
+	margin-left: -30px;
+	z-index: 1;
+}
+
 .headercontent .title {
 	font-size: 50px;
 	margin-bottom: 25px;
@@ -407,7 +410,6 @@ ul#navigation li .fa {
 	background-color: rgba(0,0,0,0.5);
 	padding:25px;
 }
-
 .biothumb .overlay h1{
 	font-size: 45px;
 }
@@ -920,37 +922,8 @@ ul.timeline li .data .text {
 	font-weight: 700;
 }
 
-/* home
- **************************************************/
- .home .pageheader{
-	background-image: url(../img/home.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-	padding: 180px 10%;
-}
-.home .pageheader .title{
-	border: none;
-}
-.home .fixedbg.parallax{
-	background: #fff url('../img/home-parallaxbg.jpg');
-}
-
 /* publications
  **************************************************/
- #publications .pageheader{
-	background-image: url(../img/publications.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-	padding: 190px 0 35px 0;
-}
-
-#publications .pageheader .title{
-	  color: #fff;
-	  border: none;
-}
-
 #pub-grid .mix {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 	filter: alpha(opacity=0);
@@ -1017,17 +990,13 @@ ul.timeline li .data .text {
 }
 /* Gallery
  **************************************************/
-#gallery .pageheader{
-	background-image: url(../img/gallery-head.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-	padding: 190px 0 70px 0;
+#gallery-header {
+	_color: #f7f7f7;
 }
 
-#gallery .pageheader h2{
-	color: #f7f7f7;
-	text-align:left;
+#gallery-header h2 {
+	font-size: 50px;
+	text-align: center;
 }
 
 #gallery-large {
@@ -1201,57 +1170,15 @@ ul.grid li a,ul.grid li img {
 	opacity: 0;
 }
 
-/* research
+
+/* contanct
  **************************************************/
-#research .pageheader{
-	background-image: url(../img/research.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-	padding: 190px 0 35px 0;
-}
-
-#research .pageheader .title{
-	  color: #fff;
-	  border: none;
-}
-
-/* projects
- **************************************************/
-#projects .pageheader{
-	background-image: url(../img/projects.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-	padding: 190px 0 35px 0;
-}
-
-#projects .pageheader .title{
-	  color: #fff;
-	  border: none;
-}
-
-/* contact
- **************************************************/
-#contact .pageheader{
-	background-image: url(../img/contact.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-	padding: 190px 0 35px 0;
-}
-
-#contact .pageheader .title{
-	  color: #fff;
-	  border: none;
-}
-
 .contact-office {
-	background: #fff url('../img/contact-office.jpg') no-repeat;
+	background: #fff url('../img/contact-bg-1.png') no-repeat;
 }
 
 .contact-lab {
-	background: #fff url('../img/contact-lab.jpg') no-repeat;
+	background: #fff url('../img/contact-bg-2.png') no-repeat;
 	color: #fff;
 }
 
@@ -1329,7 +1256,7 @@ ul.grid li a,ul.grid li img {
 	}
 
 	.headercontent .title{
-		font-size: 30px;
+		font-size: 20px;
 	}
 	
 }
